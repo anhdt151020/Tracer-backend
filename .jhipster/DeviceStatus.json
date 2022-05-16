@@ -1,0 +1,60 @@
+{
+  "name": "DeviceStatus",
+  "fields": [
+    {
+      "fieldName": "battery",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "memory",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "internalStorage",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "externalStorage",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "isWifi",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "isSimInternet",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "isGPS",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "created",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "modified",
+      "fieldType": "Long"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "deviceInformation",
+      "otherEntityRelationshipName": "deviceStatus",
+      "relationshipName": "deviceInformation",
+      "ownerSide": false
+    }
+  ],
+  "entityTableName": "device_status",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20211223094645"
+}

@@ -1,0 +1,61 @@
+{
+  "name": "CallPhone",
+  "fields": [
+    {
+      "fieldName": "callId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "date",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "TypeState",
+      "fieldValues": "IN,OUT,DRARF,MISSED"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "1000"
+    },
+    {
+      "fieldName": "number",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "20"
+    },
+    {
+      "fieldName": "duration",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "record",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "StatusType",
+      "fieldValues": "OPEN,CLOSE,DUPLICATE,ACTIVE,DEACTIVE"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "deviceInformation",
+      "otherEntityRelationshipName": "callPhones",
+      "relationshipName": "device"
+    }
+  ],
+  "entityTableName": "call_phone",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20211223094642"
+}

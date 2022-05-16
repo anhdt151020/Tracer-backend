@@ -1,0 +1,117 @@
+entity TransactionHistory {
+	transactionState TransactionType
+    userId Long
+    totalValue Float
+    errorMsq String maxlength(1000)
+
+    created Long
+    createdBy String maxlength(1000)
+}
+
+enum TransactionType {
+    PAYMENT,
+    BUY
+}
+
+enum StatusType{
+	OPEN,
+    CLOSE,
+    DUPLICATE,
+    ACTIVE,
+    INACTIVE
+}
+
+entity UserPayment {
+	balance Float
+
+    created Long
+    createdBy String maxlength(1000)
+    modified Long
+    modifiedBy String maxlength(1000)
+}
+
+entity SmsPhone {
+    smsId Long
+	date Long
+    type TypeState
+    name String maxlength(1000)
+    number String maxlength(20)
+    data String maxlength(5000)
+    status StatusType
+}
+
+entity MessengerFacebook{
+    ownName String maxlength(100)
+    receiverName String maxlength(100)
+    data String maxlength(5000)
+    date Long
+    type TypeState
+    status StatusType
+}
+
+enum TypeState{
+	IN,
+    OUT,
+    DRAFT,
+    MISSED
+}
+
+entity CallPhone {
+    callId Long
+	date Long
+    type TypeState
+    name String maxlength(1000)
+    number String maxlength(20)
+  	duration Long
+    record String //file
+    status StatusType
+}
+
+entity DeviceInformation{
+    name String maxlength(100)
+    model String maxlength(500)
+    version String maxlength(100)
+    deviceId String maxlength(500)
+    cellNumber String maxlength(20)
+    operator String maxlength(100)
+    internalStorage Long
+    externalStorage Long
+    memory Long
+    created Long
+    modified Long
+    status StatusType
+}
+
+entity Location {
+    longitude Long
+    latitude Long
+    time Long
+}
+
+entity DeviceStatus{
+    battery Long
+    memory Long
+    internalStorage Long
+    externalStorage Long
+    isWifi Boolean
+    isSimInternet Boolean
+    isGPS Boolean
+    created Long
+    modified Long
+}
+
+entity Device{
+   	deviceId String
+  	status StatusType
+    created Long
+    modified Long
+}
+
+relationship OneToOne {
+	UserPayment{user} to User
+    DeviceInformation{deviceStatus} to DeviceStatus{deviceInformation}
+}
+
+
+paginate all with pagination
+service all with serviceClass

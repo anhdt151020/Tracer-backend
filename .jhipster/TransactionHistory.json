@@ -1,0 +1,45 @@
+{
+  "name": "TransactionHistory",
+  "fields": [
+    {
+      "fieldName": "transactionState",
+      "fieldType": "TransactionType",
+      "fieldValues": "PAYMENT,BUY"
+    },
+    {
+      "fieldName": "userId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "totalValue",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "errorMsq",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "1000"
+    },
+    {
+      "fieldName": "created",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "1000"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "transaction_history",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20211223094638"
+}

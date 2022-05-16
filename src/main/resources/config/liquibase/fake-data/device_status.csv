@@ -1,0 +1,11 @@
+id;battery;memory;internal_storage;external_storage;is_wifi;is_sim_internet;is_gps;created;modified;device_information_id
+1;70;93;91;69;false;true;false;1642395730;1642395792;1
+2;63;70;50;75;true;true;false;1642395735;1642395792;2
+3;73;50;88;70;false;false;false;1642395740;1642395806;3
+4;61;94;70;37;true;true;false;1642395748;1642395810;4
+5;11;75;50;88;false;true;true;1642395753;1642395813;5
+6;76;88;37;70;false;true;false;1642395757;1642395817;6
+7;65;70;37;94;false;true;false;1642395757;1642395821;7
+8;52;50;88;70;true;true;false;1642395783;1642395825;8
+9;91;94;70;75;true;true;false;1642395788;1642395828;9
+10;64;75;50;70;true;false;true;1642395792;1642395832;10

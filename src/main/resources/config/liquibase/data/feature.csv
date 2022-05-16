@@ -1,0 +1,13 @@
+id;display_name;url
+1;get Device Information;/user/device-information
+2;get Contact;/user/contacts
+3;get Call Information;/user/call-logs
+4;get Sms Information;/user/sms-phones
+5;get Location Information;/user/location
+6;get Sms Information by Phone number;/user/sms-phones/number
+7;get Facebook Messenger;/user/facebook-messengers
+8;get Instagram;/user/instagrams
+9;get Tiktok;/user/tiktoks
+10;get Skype;/user/skypes
+11;get Zalo;/user/zalos
+

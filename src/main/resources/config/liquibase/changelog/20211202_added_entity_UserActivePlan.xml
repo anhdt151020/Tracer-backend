@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd">
+
+    <changeSet id="202112021-1" author="jhipster">
+        <createTable tableName="feature">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="display_name" type="varchar(1000)">
+                <constraints nullable="false" />
+            </column>
+            <column name="url" type="varchar(1000)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="202112021-1-data" author="jhipster" context="faker">
+        <loadData
+            file="config/liquibase/data/feature.csv"
+            separator=";"
+            tableName="feature"
+            usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="display_name" type="string"/>
+            <column name="url" type="string"/>
+        </loadData>
+    </changeSet>
+
+    <changeSet id="202112022-1" author="jhipster">
+        <createTable tableName="plan">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="plan_name" type="varchar(1000)">
+                <constraints nullable="false" />
+            </column>
+            <column name="plan_status" type="varchar(1000)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="202112022-1-data" author="jhipster" context="faker">
+        <loadData
+            file="config/liquibase/data/plan.csv"
+            separator=";"
+            tableName="plan"
+            usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="plan_name" type="string"/>
+            <column name="plan_status" type="string" />
+        </loadData>
+    </changeSet>
+
+    <changeSet id="202112024-1" author="jhipster">
+        <createTable tableName="plan_feature">
+            <column name="feature_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="plan_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+        <addPrimaryKey tableName="plan_feature" columnNames="feature_id,plan_id"/>
+    </changeSet>
+    <changeSet id="202112024-2-constraints" author="jhipster">
+        <addForeignKeyConstraint baseTableName="plan_feature"
+                                 baseColumnNames="feature_id"
+                                 constraintName="fk_plan_feature__feature"
+                                 referencedTableName="feature"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="plan_feature"
+                                 baseColumnNames="plan_id"
+                                 constraintName="fk_plan_feature__plan"
+                                 referencedTableName="plan"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+    <changeSet id="202112024-1-data" author="jhipster" context="faker">
+        <loadData
+            file="config/liquibase/data/plan_feature.csv"
+            separator=";"
+            tableName="plan_feature"
+            usePreparedStatements="true">
+            <column name="feature_id" type="numeric"/>
+            <column name="plan_id" type="numeric"/>
+        </loadData>
+    </changeSet>
+
+    <changeSet id="202112023-1" author="jhipster">
+        <createTable tableName="user_active_plan">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="user_id" type="bigint" autoIncrement="true">
+                <constraints nullable="false"/>
+            </column>
+            <column name="plan_id" type="bigint" autoIncrement="true">
+                <constraints nullable="false"/>
+            </column>
+            <column name="start_date" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="end_date" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="status" type="varchar(10)">
+                <constraints nullable="true" />
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="202112023-2-constraints" author="jhipster">
+        <addForeignKeyConstraint baseTableName="user_active_plan"
+                                 baseColumnNames="plan_id"
+                                 constraintName="fk_user_active_plan__plan"
+                                 referencedTableName="plan"
+                                 referencedColumnNames="id"/>
+
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="user_active_plan"
+                                 constraintName="fk_user_active_plan__user"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+    </changeSet>
+    <changeSet id="202112023-1-data" author="jhipster" context="faker">
+        <loadData
+            file="config/liquibase/fake-data/user_active_plan.csv"
+            separator=";"
+            tableName="user_active_plan"
+            usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="user_id" type="numeric"/>
+            <column name="plan_id" type="numeric"/>
+            <column name="start_date" type="numeric"/>
+            <column name="end_date" type="numeric"/>
+            <column name="status" type="string"/>
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd">
+
+    <changeSet id="202201091-1" author="jhipster">
+        <createTable tableName="facebook_messenger">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(1000)">
+                <constraints nullable="false" />
+            </column>
+            <column name="contact" type="varchar(1000)">
+                <constraints nullable="false" />
+            </column>
+            <column name="data" type="varchar(5000)">
+                <constraints nullable="false" />
+            </column>
+            <column name="date" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="type" type="varchar(10)">
+                <constraints nullable="true" />
+            </column>
+            <column name="status" type="varchar(10)">
+                <constraints nullable="true" />
+            </column>
+            <column name="device_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="202201092-1" author="jhipster">
+        <createTable tableName="instagram">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(1000)">
+                <constraints nullable="false" />
+            </column>
+            <column name="contact" type="varchar(1000)">
+                <constraints nullable="false" />
+            </column>
+            <column name="data" type="varchar(5000)">
+                <constraints nullable="false" />
+            </column>
+            <column name="date" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="type" type="varchar(10)">
+                <constraints nullable="true" />
+            </column>
+            <column name="status" type="varchar(10)">
+                <constraints nullable="true" />
+            </column>
+            <column name="device_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="202201093-1" author="jhipster">
+        <createTable tableName="skype">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(1000)">
+                <constraints nullable="false" />
+            </column>
+            <column name="contact" type="varchar(1000)">
+                <constraints nullable="false" />
+            </column>
+            <column name="data" type="varchar(5000)">
+                <constraints nullable="false" />
+            </column>
+            <column name="date" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="type" type="varchar(10)">
+                <constraints nullable="true" />
+            </column>
+            <column name="status" type="varchar(10)">
+                <constraints nullable="true" />
+            </column>
+            <column name="device_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="202201094-1" author="jhipster">
+        <createTable tableName="tiktok">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(1000)">
+                <constraints nullable="false" />
+            </column>
+            <column name="contact" type="varchar(1000)">
+                <constraints nullable="false" />
+            </column>
+            <column name="data" type="varchar(5000)">
+                <constraints nullable="false" />
+            </column>
+            <column name="date" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="type" type="varchar(10)">
+                <constraints nullable="true" />
+            </column>
+            <column name="status" type="varchar(10)">
+                <constraints nullable="true" />
+            </column>
+            <column name="device_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="202201095-1" author="jhipster">
+        <createTable tableName="zalo">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(1000)">
+                <constraints nullable="false" />
+            </column>
+            <column name="contact" type="varchar(1000)">
+                <constraints nullable="false" />
+            </column>
+            <column name="data" type="varchar(5000)">
+                <constraints nullable="false" />
+            </column>
+            <column name="date" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="type" type="varchar(10)">
+                <constraints nullable="true" />
+            </column>
+            <column name="status" type="varchar(10)">
+                <constraints nullable="true" />
+            </column>
+            <column name="device_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="202201091-1-constraints" author="jhipster">
+        <addForeignKeyConstraint baseTableName="facebook_messenger"
+                                 baseColumnNames="device_id"
+                                 constraintName="fk_facebook_messenger__device_information"
+                                 referencedTableName="device_information"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+    <changeSet id="202201092-1-constraints" author="jhipster">
+        <addForeignKeyConstraint baseTableName="instagram"
+                                 baseColumnNames="device_id"
+                                 constraintName="fk_instagram__device_information"
+                                 referencedTableName="device_information"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+    <changeSet id="202201093-1-constraints" author="jhipster">
+        <addForeignKeyConstraint baseTableName="skype"
+                                 baseColumnNames="device_id"
+                                 constraintName="fk_skype__device_information"
+                                 referencedTableName="device_information"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+    <changeSet id="202201094-1-constraints" author="jhipster">
+        <addForeignKeyConstraint baseTableName="tiktok"
+                                 baseColumnNames="device_id"
+                                 constraintName="fk_tiktok__device_information"
+                                 referencedTableName="device_information"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+    <changeSet id="202201095-1-constraints" author="jhipster">
+        <addForeignKeyConstraint baseTableName="zalo"
+                                 baseColumnNames="device_id"
+                                 constraintName="fk_zalo__device_information"
+                                 referencedTableName="device_information"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+    <changeSet id="202201091-1-data" author="jhipster" context="faker">
+        <loadData
+            file="config/liquibase/fake-data/facebook_messenger.csv"
+            separator=";"
+            tableName="facebook_messenger"
+            usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="name" type="string"/>
+            <column name="contact" type="string"/>
+            <column name="data" type="string"/>
+            <column name="date" type="numeric"/>
+            <column name="type" type="string"/>
+            <column name="status" type="string"/>
+            <column name="device_id" type="numeric"/>
+        </loadData>
+    </changeSet>
+
+    <changeSet id="202201092-1-data" author="jhipster" context="faker">
+        <loadData
+            file="config/liquibase/fake-data/instagram.csv"
+            separator=";"
+            tableName="instagram"
+            usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="name" type="string"/>
+            <column name="contact" type="string"/>
+            <column name="data" type="string"/>
+            <column name="date" type="numeric"/>
+            <column name="type" type="string"/>
+            <column name="status" type="string"/>
+            <column name="device_id" type="numeric"/>
+        </loadData>
+    </changeSet>
+
+    <changeSet id="202201093-1-data" author="jhipster" context="faker">
+        <loadData
+            file="config/liquibase/fake-data/skype.csv"
+            separator=";"
+            tableName="skype"
+            usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="name" type="string"/>
+            <column name="contact" type="string"/>
+            <column name="data" type="string"/>
+            <column name="date" type="numeric"/>
+            <column name="type" type="string"/>
+            <column name="status" type="string"/>
+            <column name="device_id" type="numeric"/>
+        </loadData>
+    </changeSet>
+
+    <changeSet id="202201094-1-data" author="jhipster" context="faker">
+        <loadData
+            file="config/liquibase/fake-data/tiktok.csv"
+            separator=";"
+            tableName="tiktok"
+            usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="name" type="string"/>
+            <column name="contact" type="string"/>
+            <column name="data" type="string"/>
+            <column name="date" type="numeric"/>
+            <column name="type" type="string"/>
+            <column name="status" type="string"/>
+            <column name="device_id" type="numeric"/>
+        </loadData>
+    </changeSet>
+
+    <changeSet id="202201095-1-data" author="jhipster" context="faker">
+        <loadData
+            file="config/liquibase/fake-data/zalo.csv"
+            separator=";"
+            tableName="zalo"
+            usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="name" type="string"/>
+            <column name="contact" type="string"/>
+            <column name="data" type="string"/>
+            <column name="date" type="numeric"/>
+            <column name="type" type="string"/>
+            <column name="status" type="string"/>
+            <column name="device_id" type="numeric"/>
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

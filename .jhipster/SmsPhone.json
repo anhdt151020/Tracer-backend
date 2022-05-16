@@ -1,0 +1,59 @@
+{
+  "name": "SmsPhone",
+  "fields": [
+    {
+      "fieldName": "smsId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "date",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "TypeState",
+      "fieldValues": "IN,OUT,DRARF,MISSED"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "1000"
+    },
+    {
+      "fieldName": "number",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "20"
+    },
+    {
+      "fieldName": "data",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "5000"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "StatusType",
+      "fieldValues": "OPEN,CLOSE,DUPLICATE,ACTIVE,DEACTIVE"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "deviceInformation",
+      "otherEntityRelationshipName": "smsPhones",
+      "relationshipName": "device"
+    }
+  ],
+  "entityTableName": "sms_phone",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20211223094640"
+}

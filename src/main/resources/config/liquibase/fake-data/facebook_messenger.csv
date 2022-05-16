@@ -1,0 +1,21 @@
+id;name;contact;data;date;type;status;device_id
+1;Tuấn Anh;tuananh@tracer.net;em ăn cơm chưa fb;1641665291;IN;OPEN;1
+2;Quân;minhquan@tracer.net;ủa em fb;1641665291;OUT;OPEN;1
+3;Quang;phongquang@tracer.net;alo alo fb;1641665294;IN;OPEN;1
+4;Trà;travan@tracer.net;hong bé ơi fb;1641665298;OUT;OPEN;1
+5;Hiếu;minhhieu@tracer.net;jztr ?fb;1641665291;IN;OPEN;1
+6;Tuấn Anh;tuananh@tracer.net;em ăn cơm chưafb;1641665291;OUT;OPEN;1
+7;Quân;minhquan@tracer.net;ủa emfb;1641665291;IN;OPEN;1
+8;Quang;phongquang@tracer.net;alo alo fb;1641665291;OUT;OPEN;1
+9;Trà;travan@tracer.net;hong bé ơi fb;1641665291;IN;OPEN;1
+10;Hiếu;minhhieu@tracer.net;jztr ?fb;1641665291;OUT;OPEN;1
+11;Quân;minhquan@tracer.net;em ăn cơm chưafb;1641665291;IN;OPEN;1
+12;Quang;phongquang@tracer.net;ủa emfb;1641665291;OUT;OPEN;1
+13;Trà;travan@tracer.net;alo alo fb;1641665291;IN;OPEN;1
+14;Quân;minhquan@tracer.net;hong bé ơi fb;1641665291;OUT;OPEN;1
+15;Quang;phongquang@tracer.net;jztr ?fb;1641665291;IN;OPEN;1
+16;Trà;travan@tracer.net;em ăn cơm chưafb;1641665291;OUT;OPEN;1
+17;Hiếu;minhhieu@tracer.net;ủa emfb;1641665291;IN;OPEN;1
+18;Tuấn Anh;tuananh@tracer.net;alo alo fb;1641665291;OUT;OPEN;1
+19;Quân;minhquan@tracer.net;hong bé ơi fb;1641665291;IN;OPEN;1
+20;Trà;travan@tracer.net;jztr ?fb;1641665291;OUT;OPEN;1

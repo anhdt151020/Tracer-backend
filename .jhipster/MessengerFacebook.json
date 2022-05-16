@@ -1,0 +1,55 @@
+{
+  "name": "MessengerFacebook",
+  "fields": [
+    {
+      "fieldName": "ownName",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "receiverName",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "data",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "5000"
+    },
+    {
+      "fieldName": "date",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "TypeState",
+      "fieldValues": "IN,OUT,DRARF,MISSED"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "StatusType",
+      "fieldValues": "OPEN,CLOSE,DUPLICATE,ACTIVE,DEACTIVE"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "deviceInformation",
+      "otherEntityRelationshipName": "messengerFacebooks",
+      "relationshipName": "device"
+    }
+  ],
+  "entityTableName": "messenger_facebook",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20211223094641"
+}
